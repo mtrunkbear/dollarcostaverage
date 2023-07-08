@@ -1,7 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import useWindowSize from "@/hooks/useWindowSize";
 import { usePathname } from "next/navigation";
 
 const NavBar = () => {
