@@ -40,13 +40,12 @@ body {
   height: 15%;
 }
 .title {
+  display: flex;
   width: 100%;
   background-color: rgb(72, 109, 72);
-
   height: 100%;
   align-items: center;
   justify-content: center;
-  font-size: 23px;
 }
 .title h1 {
   background: -webkit-linear-gradient(yellow, rgb(145, 255, 0));
@@ -196,34 +195,15 @@ main {
 }
 
 @media screen and (max-width: 700px) {
-  .fa-solid.fa-bars {
-    display: flex;
-    color: azure;
-    font-size: xx-large;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 100%;
-    margin-right: 5%;
-  }
-  .fa-solid.fa-xmark {
-    display: flex;
-    color: azure;
-    font-size: 40px;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 100%;
-    margin-right: 5%;
-    margin-top: -1%;
-  }
 
   .app-header {
     height: 8%;
   }
   .title {
+    display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
   }
 
   .navbar {

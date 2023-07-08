@@ -12,7 +12,7 @@ const NavBar = () => {
     { name: "Price Returns", href: "/price-returns" },
   ];
   return (
-    <nav className="w-full h-20 bg-[#001400] z-50">
+    <nav className="w-full h-16 md:h-20 bg-[#001400] z-50">
       <div className="max-w-screen-xl flex flex-row-reverse flex-wrap items-center justify-between mx-auto p-4">
         <button
           data-collapse-toggle="navbar-default"
