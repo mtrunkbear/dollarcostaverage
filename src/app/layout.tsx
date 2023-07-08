@@ -30,12 +30,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"
         />
-        <Script
-          src="https://kit.fontawesome.com/78485b5ada.js"
-          crossOrigin="anonymous"
-        ></Script>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></Script>
       </Head>
+    
       <body>
         <DataContextProvider>
           <Header />
@@ -43,6 +39,11 @@ export default function RootLayout({
           {children}
         </DataContextProvider>
       </body>
+      <Script
+        src="https://kit.fontawesome.com/78485b5ada.js"
+        crossOrigin="anonymous"
+      ></Script>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></Script>
     </html>
   );
 }
