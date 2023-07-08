@@ -1,4 +1,3 @@
-"use client";
 import Header from "@/components/Header";
 import Script from "next/script";
 import { DataContextProvider } from "../contexts/dataContext";
