@@ -41,7 +41,7 @@ const NavBar = () => {
         <div className="hidden w-full md:block  md:w-auto" id="navbar-default">
           <ul className="font-medium flex flex-col bg-[#001400] p-4 md:p-0 mt-4 border rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  border-black">
             {navLinks.map(({ name, href }) => (
-              <NavLink name={name} href={href} />
+              <NavLink key={href + name} name={name} href={href} />
             ))}
           </ul>
         </div>
@@ -50,13 +50,12 @@ const NavBar = () => {
   );
 };
 const NavLink = ({ name, href }: any) => {
-  const pathname  = usePathname();
+  const pathname = usePathname();
   const text = pathname == href ? " text-[#00dc00]" : " text-[#00aa00]";
   return (
     <li>
       <Link
         href={href}
-        key={href+name}
         className={
           "block py-2 pl-3 pr-4  hover:text-[#00d200] bg-[#001e00] rounded md:bg-transparent  md:p-0 m-1 md:m-0 " +
           text
