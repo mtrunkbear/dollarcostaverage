@@ -29,24 +29,26 @@ ChartJS.register(
   zoomPlugin
 );
 
-export const Chart = (props: any) => {
+export default function Chart(props: any) {
   const [chartData, setChartData] = useState<any>([{ x: NaN, y: "?" }] as any);
 
   const [symbol, setSymbol] = useState(props.symbol);
 
   const valuePeriod2 = chartData[chartData.length - 1].y;
-  const valueWithPrice =  valuePeriod2.toLocaleString("en-US", {
+  const valueWithPrice = valuePeriod2.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   });
 
   const valueWhitoutPrice = valuePeriod2.toString().slice(0, 5);
-  const valueWhithReturns= valueWhitoutPrice +'%';
+  const valueWhithReturns = valueWhitoutPrice + "%";
 
   const actualValue =
     props.type === "dca" || props.type === "prices"
       ? valueWithPrice
-      : props.type ==='priceReturns'? valueWhithReturns :valueWhitoutPrice;
+      : props.type === "priceReturns"
+      ? valueWhithReturns
+      : valueWhitoutPrice;
   const titleText =
     props.type === "dca"
       ? "Accumulated value of the instrument (in dollars):"
@@ -148,7 +150,7 @@ export const Chart = (props: any) => {
         const priceReturns = Finance.priceReturns({
           date: date,
           prices: prices,
-          mode : 'percent',
+          mode: "percent",
         });
         setChartData(priceReturns);
       } else {
@@ -181,4 +183,4 @@ export const Chart = (props: any) => {
   };
 
   return <Line options={options as any} data={data} />;
-};
+}

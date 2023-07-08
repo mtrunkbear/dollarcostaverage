@@ -29,3 +29,4 @@ export const DataContextProvider = (props: any) => {
     <DataContext.Provider value={value}>{props.children}</DataContext.Provider>
   );
 };
+ export default DataContextProvider;

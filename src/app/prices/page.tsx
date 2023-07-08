@@ -1,8 +1,13 @@
 'use client'
 import { useContext } from "react";
-import { Chart } from "../../components/Chart";
 import { Form } from "../../components/Form";
 import { DataContext } from "../../contexts/dataContext";
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(
+  () => import('../../components/Chart'),
+  { ssr: false }
+)
 
 export default function Prices() {
   const { contextData } = useContext(DataContext);

@@ -1,9 +1,15 @@
 'use client'
-import Image from 'next/image'
 import { useContext } from "react";
 import { Form } from "../components/Form";
 import { DataContext } from "../contexts/dataContext";
-import { Chart } from "../components/Chart";
+/* import { Chart } from "../components/Chart"; */
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(
+  () => import('../components/Chart') as any,
+  { ssr: false }
+)
+
 
 export default function Home() {
 
