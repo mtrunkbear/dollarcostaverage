@@ -31,19 +31,19 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"
         />
       </Head>
-    
+
       <body>
         <DataContextProvider>
           <Header />
           <NavBar />
           {children}
         </DataContextProvider>
+        <Script
+          src="https://kit.fontawesome.com/78485b5ada.js"
+          crossOrigin="anonymous"
+        ></Script>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></Script>
       </body>
-      <Script
-        src="https://kit.fontawesome.com/78485b5ada.js"
-        crossOrigin="anonymous"
-      ></Script>
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></Script>
     </html>
   );
 }
