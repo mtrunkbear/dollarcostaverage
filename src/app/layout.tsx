@@ -42,7 +42,7 @@ export default function RootLayout({
           src="https://kit.fontawesome.com/78485b5ada.js"
           crossOrigin="anonymous"
         ></Script>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></Script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
       </body>
     </html>
   );
