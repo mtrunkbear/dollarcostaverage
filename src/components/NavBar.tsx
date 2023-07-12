@@ -46,7 +46,9 @@ const NavBar = () => {
         </button>
         <div
           className={
-            " w-full h-[100vh]  md:visible md:block  md:w-auto " + " " + style
+            " w-full h-[100vh] md:h-[100%]  md:visible md:block  md:w-auto " +
+            " " +
+            style
           }
           id="navbar-default"
           onClick={handleOnClick}
