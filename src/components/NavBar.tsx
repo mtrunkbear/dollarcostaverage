@@ -1,14 +1,21 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useRef } from "react";
 
 const NavBar = () => {
+  const [style, setStyle] = useState("invisible hidden");
   const navLinks = [
     { name: "Dolar Cost Average", href: "/" },
     { name: "Sharp Ratio", href: "/sharpe-ratio" },
     { name: " Prices", href: "/prices" },
     { name: "Price Returns", href: "/price-returns" },
   ];
+
+  const handleOnClick = () => {
+    setStyle(style == "invisible hidden" ? "visible" : "invisible hidden");
+  };
+
   return (
     <nav className="w-full h-16 md:h-20 bg-[#001400] z-50">
       <div className="max-w-screen-xl flex flex-row-reverse flex-wrap items-center justify-between mx-auto p-4">
@@ -18,6 +25,7 @@ const NavBar = () => {
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-[#00aa00] rounded-lg md:hidden hover:bg-[#002e00] focus:outline-none focus:ring-2 focus:ring-[#00aa00]  "
           aria-controls="navbar-default"
           aria-expanded="false"
+          onClick={handleOnClick}
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -36,7 +44,13 @@ const NavBar = () => {
             />
           </svg>
         </button>
-        <div className="hidden w-full md:block  md:w-auto" id="navbar-default">
+        <div
+          className={
+            " w-full h-[100vh]  md:visible md:block  md:w-auto " + " " + style
+          }
+          id="navbar-default"
+          onClick={handleOnClick}
+        >
           <ul className="font-medium flex flex-col bg-[#001400] p-4 md:p-0 mt-4 border rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  border-black">
             {navLinks.map(({ name, href }) => (
               <NavLink key={href + name} name={name} href={href} />

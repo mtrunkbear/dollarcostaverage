@@ -33,7 +33,7 @@ export default function Home() {
         <div className="panel">
           <Form type={"dca"} />
 
-          <div className="chart-container">
+          <div className="chart-container" >
             <Chart
               symbol={contextData?.symbol}
               amount={contextData?.value}
