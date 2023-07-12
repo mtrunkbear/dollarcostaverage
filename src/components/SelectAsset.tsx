@@ -18,9 +18,9 @@ const assets = [
 ];
 
 const interval = [
-  { label: "Diario", value: "1d" },
-  { label: "Semanal", value: "1wk" },
-  { label: "Mensual", value: "1mo" },
+  { label: "Daily", value: "1d" },
+  { label: "Weekly", value: "1wk" },
+  { label: "Monthly", value: "1mo" },
 ];
 
 const SelectAsset = ({ setAsset, setInterval, type }: any) => {
