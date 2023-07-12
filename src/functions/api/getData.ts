@@ -6,7 +6,7 @@ export const getData = async (
   period2: Date,
   interval: string
 ) => {
-  const response = await axios.get("http://localhost:3000/api/data/" + symbol, {
+  const response = await axios.get(process.env.NEXT_PUBLIC_API_URL+"/api/data/" + symbol, {
     params: { period1, period2, interval },
   });
 
