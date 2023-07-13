@@ -1,10 +1,9 @@
 import Header from "@/components/Header";
-/* import { DataContextProvider } from "../contexts/dataContext"; */
 import "./globals.css";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-const DataContextProvider = dynamic(() => import("../contexts/dataContext"), {
+const FormDataContextProvider = dynamic(() => import("../contexts/formDataContext"), {
   ssr: false,
 });
 const NavBar = dynamic(() => import("../components/NavBar"), {
@@ -31,11 +30,11 @@ export default function RootLayout({
       </Head>
 
       <body>
-        <DataContextProvider>
+        <FormDataContextProvider>
           <Header />
           <NavBar />
           {children}
-        </DataContextProvider>
+        </FormDataContextProvider>
       </body>
     </html>
   );

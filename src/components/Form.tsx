@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import SelectAsset from "./SelectAsset";
-import { DataContext } from "../contexts/dataContext";
+import { FormDataContext } from "../contexts/formDataContext";
 
 export const Form = (props: any) => {
-  const { contextData, setContextData } = useContext(DataContext);
+  const { formData, setFormData } = useContext(FormDataContext);
 
   return (
     <form className="form">
@@ -13,7 +13,7 @@ export const Form = (props: any) => {
           <div className="select">
             <SelectAsset
               setAsset={(opt: any) =>
-                setContextData({ ...contextData, symbol: opt.value as any })
+                setFormData({ ...formData, symbol: opt.value as any })
               }
               type={"instrument"}
             />
@@ -26,7 +26,7 @@ export const Form = (props: any) => {
           <div className="select">
             <SelectAsset
               setInterval={(opt: any) =>
-                setContextData({ ...contextData, interval: opt.value as any })
+                setFormData({ ...formData, interval: opt.value as any })
               }
             />
           </div>
@@ -37,10 +37,10 @@ export const Form = (props: any) => {
           <label>
             <span> Amount:</span>
             <input
-              value={contextData?.value}
+              value={formData?.value}
               onChange={(e) => {
-                setContextData({
-                  ...contextData,
+                setFormData({
+                  ...formData,
                   value: e.target.value as any,
                 });
               }}
@@ -56,9 +56,9 @@ export const Form = (props: any) => {
             type="date"
             min="1970-01-01"
             max="2025-01-01"
-            value={contextData?.period1}
+            value={formData?.period1}
             onChange={(e) =>
-              setContextData({ ...contextData, period1: e.target.value })
+              setFormData({ ...formData, period1: e.target.value })
             }
           />
         </label>
@@ -70,9 +70,9 @@ export const Form = (props: any) => {
             type="date"
             min="1970-01-01"
             max="2025-01-01"
-            value={contextData?.period2}
+            value={formData?.period2}
             onChange={(e) =>
-              setContextData({ ...contextData, period2: e.target.value })
+              setFormData({ ...formData, period2: e.target.value })
             }
           />
         </label>
